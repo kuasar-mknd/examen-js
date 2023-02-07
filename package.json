@@ -10,5 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.8.2"
-  }
+  },
+  "browserslist": "> 0.25%, not dead"
 }

@@ -61,6 +61,7 @@ export class User {
         containerElement.insertAdjacentHTML("afterbegin", childHTML);
         containerElement.addEventListener("click", () => {
             this.changePresence();
+            this.updateCounter();
             containerElement.dataset.present = this.#presence;
         });
         return containerElement;
@@ -72,6 +73,13 @@ export class User {
     render() {
         const main = document.querySelector("main");
         main.appendChild(this.#structure);
+    }
+
+    /*
+     * update counter element
+     */
+    updateCounter(){
+        document.querySelector(".counter").textContent = `${document.querySelectorAll("[data-present='true']").length + 1}/20 people are here`;
     }
 
 }
